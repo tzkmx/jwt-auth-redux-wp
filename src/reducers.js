@@ -1,7 +1,8 @@
 const initialState = {
   isAuthenticating: false,
   currentUser: null,
-  errorMessage: null
+  errorMessage: null,
+  token: null
 }
 
 export const reducer = (state = initialState, action = {}) => {
@@ -13,14 +14,20 @@ export const reducer = (state = initialState, action = {}) => {
       }
     case 'LOGIN_FAILURE':
       return {
-        ...state,
+        token: null,
+        currentUser: null,
         isAuthenticating: false,
-        errorMessage: action.errorMessage
+        errorMessage: action.meta.message
       }
     case 'LOGIN_SUCCESS':
+      let { name, email, token } = action.payload
       return {
         isAuthenticating: false,
-        currentUser: action.user,
+        token,
+        currentUser: {
+          name,
+          email
+        },
         errorMessage: null
       }
     case 'LOGOUT':
