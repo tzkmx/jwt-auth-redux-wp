@@ -1,0 +1,20 @@
+{
+  "name": "jwt-auth-redux-wordpress",
+  "version": "0.0.1",
+  "description": "Module to set auth workflow with WP using Json Web Tokens",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "npm test -- --watch"
+  },
+  "keywords": [],
+  "author": "Jesus E. Franco Martinez <jefrancomix@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.0.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.0.4"
+  }
+}
